@@ -13,5 +13,11 @@ Content-Type: application/json
 {"title": "codeit-shortit"}
 
 ###
+PATCH http://localhost:3000/api/short-links/123
+Content-Type: application/json
+
+{"title": "codeit-shortit"}
+
+###
 GET http://localhost:3000/api/short-links/123
 Cookie: session-id=codeit-1234
