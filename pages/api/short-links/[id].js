@@ -1,3 +1,15 @@
-export default function handler(request, response) {
-  response.send("안녕 다이나믹 라우트!");
+export default function handler(req, res) {
+  // res.send(req.query);
+  // res.send(req.body);
+  // res.send(req.cookies);
+  switch (req.method) {
+    case "POST":
+      res.send("생성");
+      break;
+    case "GET":
+      res.send("조회");
+      break;
+    default:
+      break;
+  }
 }
