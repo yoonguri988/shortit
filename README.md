@@ -13,3 +13,4 @@
 - MongoAtlas 와 Mongoose 준비
 - 데이터 베이스 연동하기
 - (Fix) short-links/index, short-links/[id]
+- (실습) 데이터 베이스 연동하기

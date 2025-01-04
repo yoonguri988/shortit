@@ -1,4 +1,9 @@
-export default function handler(req, res) {
+import dbConnect from "@/db/dbConnect";
+import mongoose from "mongoose";
+
+export default async function handler(req, res) {
+  await dbConnect();
+  console.log(mongoose.connection.readyState);
   switch (req.method) {
     case "GET":
       res.send([
