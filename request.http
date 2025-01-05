@@ -49,24 +49,23 @@ GET http://localhost:3000/api/qrcodes
 
 ###
 POST http://localhost:3000/api/qrcodes
-
-###
-PATCH http://localhost:3000/api/qrcodes
-
-###
-GET http://localhost:3000/api/qrcodes/abc
-
-###
-PATCH http://localhost:3000/api/qrcodes/abc
 Content-Type: application/json
 
 {
-  "title": "위키피디아 Next.js",
+  "title": "위키피디아 Next.js-002",
   "url": "https://en.wikipedia.org/wiki/Next.js"
 }
 
 ###
-DELETE http://localhost:3000/api/qrcodes/abc
+GET http://localhost:3000/api/qrcodes/677ab4e14cb1cbaaf1d23847
 
 ###
-POST http://localhost:3000/api/qrcodes/abc
+PATCH http://localhost:3000/api/qrcodes/677ab4e14cb1cbaaf1d23847
+Content-Type: application/json
+
+{
+  "title": "위키피디아 Next.js-001"
+}
+
+###
+DELETE http://localhost:3000/api/qrcodes/677ab4e14cb1cbaaf1d23847
