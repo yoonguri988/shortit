@@ -31,6 +31,18 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/short-links/677a9675d5c520ab70ce4a33
 
+###
+GET http://localhost:3000/api/short-links/
+
+###
+PATCH http://localhost:3000/api/short-links/677a9675d5c520ab70ce4a33
+Content-Type: application/json
+
+{"title": "codeit-02", "url":"https://codeit.co.kr"}
+
+###
+DELETE http://localhost:3000/api/short-links/677a9675d5c520ab70ce4a33
+
 ### QRCodes
 ###
 GET http://localhost:3000/api/qrcodes
