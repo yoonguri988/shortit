@@ -1,4 +1,8 @@
+import ShortLink from "@/db/models/ShortLink";
+
 export default function handler(req, res) {
+  console.log(ShortLink);
+
   switch (req.method) {
     case "POST":
       res.status(201).send({
