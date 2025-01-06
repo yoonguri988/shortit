@@ -1,35 +1,29 @@
-export default function handler(req, res) {
-  // res.send(req.query);
-  // res.send(req.body);
-  // res.send(req.cookies);
+import dbConnect from "@/db/dbConnect";
+import ShortLink from "@/db/models/ShortLink";
+
+export default async function handler(req, res) {
+  await dbConnect();
+  const { id } = req.query;
   switch (req.method) {
-    case "POST":
-      res.status(201).send({
-        title: "위키피디아 Next.js",
-        url: "https://en.wikipedia.org/wiki/Next.js",
+    case "PATCH":
+      const updatedShortLink = await ShortLink.findByIdAndUpdate(id, req.body, {
+        new: true,
       });
+      res.send(updatedShortLink);
       break;
+
     case "GET":
-      res.send([
-        {
-          id: "abc",
-          title: "위키피디아 Next.js",
-          url: "https://en.wikipedia.org/wiki/Next.js",
-        },
-        {
-          id: "def",
-          title: "코드잇 자유게시판",
-          url: "https://codeit.kr/community/general",
-        },
-        {
-          id: "ghi",
-          title: "코드잇 질문답변",
-          url: "https://www.codeit.kr/community/questions",
-        },
-      ]);
+      const shortLink = await ShortLink.findById(id);
+      res.send(shortLink);
       break;
+
+    case "DELETE":
+      await ShortLink.findByIdAndDelete(id);
+      res.status(204).send();
+      break;
+
     default:
-      res.status(404).send();
+      res.send();
       break;
   }
 }
