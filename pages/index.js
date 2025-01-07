@@ -56,7 +56,7 @@ export default function Home() {
             길고 복잡한 링크 주소를 짧게 줄이는 단축URL 서비스
           </p>
         </div>
-        <form className={styles.form} onSubmit={handleCreate}>
+        <form className={styles.form} onSubmit={handleCreate} method="POST">
           <Input className={styles.input} value={url} onChange={handleChange} />
           <Button className={styles.button} disabled={!url}>
             줄이기
